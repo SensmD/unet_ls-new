@@ -32,7 +32,7 @@ class MainWindow(QTabWidget):
         super().__init__()
         self.setWindowTitle('基于Unet的皮肤疾病病灶区域分割')
         self.resize(1200, 800)
-        self.setWindowIcon(QIcon("images/UI/lufei.png"))
+        # self.setWindowIcon(QIcon("images/UI/lufei.png"))
         # 图片读取进程
         self.output_size = 480
         self.img2predict = ""
@@ -52,7 +52,7 @@ class MainWindow(QTabWidget):
         # 将网络拷贝到deivce中
         net2.to(device=device)
         # 加载模型参数
-        net2.load_state_dict(torch.load('best_model.pth', map_location=device))  # todo 模型位置
+        net2.load_state_dict(torch.load('best_model_skin.pth', map_location=device))  # todo 模型位置
         # 测试模式
         net2.eval()
         self.model2 = net2
@@ -185,9 +185,9 @@ class MainWindow(QTabWidget):
         self.addTab(img_detection_widget, '皮肤病图片分割')
         self.addTab(img_detection_widget2, '眼球图片分割')
         self.addTab(about_widget, '关于作者')
-        self.setTabIcon(0, QIcon('images/UI/lufei.png'))
-        self.setTabIcon(1, QIcon('images/UI/lufei.png'))
-        self.setTabIcon(2, QIcon('images/UI/lufei.png'))
+        # self.setTabIcon(0, QIcon('images/UI/lufei.png'))
+        # self.setTabIcon(1, QIcon('images/UI/lufei.png'))
+        # self.setTabIcon(2, QIcon('images/UI/lufei.png'))
 
     '''
     ***上传图片***
