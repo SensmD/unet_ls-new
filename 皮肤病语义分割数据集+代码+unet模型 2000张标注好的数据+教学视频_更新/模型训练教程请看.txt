@@ -1,2 +1,0 @@
-语义分割模型训练教程：https://blog.csdn.net/ECHOSON/article/details/122914826
-代码地址：https://gitee.com/song-laogou/unet_42

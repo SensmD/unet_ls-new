@@ -3,8 +3,8 @@
 -------------------------------------------------
 Project Name: unet
 File Name: test.py
-Author: chenming
-Create Date: 2022/2/7
+Author: Luo Sen
+Create Date: 2023/2/7
 Description：
 -------------------------------------------------
 """
@@ -56,7 +56,7 @@ def cal_miou(test_dir="C:/Users/chenmingsong/Desktop/unetnnn/skin/Test_Images",
         # 将网络拷贝到deivce中
         net.to(device=device)
         # 加载模型参数
-        net.load_state_dict(torch.load('best_model_skin.pth', map_location=device)) # todo
+        net.load_state_dict(torch.load('best_model_skin1.pth', map_location=device)) # todo
         # 测试模式
         net.eval()
         print("Load model done.")

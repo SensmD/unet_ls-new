@@ -8,7 +8,6 @@ import torch.nn.functional as F
 
 class DoubleConv(nn.Module):
     """(convolution => [BN] => ReLU) * 2"""
-
     def __init__(self, in_channels, out_channels):
         super().__init__()
         self.double_conv = nn.Sequential(
@@ -19,7 +18,6 @@ class DoubleConv(nn.Module):
             nn.BatchNorm2d(out_channels),
             nn.ReLU(inplace=True)
         )
-
     def forward(self, x):
         return self.double_conv(x)
 
